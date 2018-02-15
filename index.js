@@ -5,7 +5,13 @@ const keys = require('./config/keys');
 
 const app = express();
 
-passport.use(new GoogleStrategy());
+passport.use(
+  new GoogleStrategy({
+    clientID: keys.googleClientID,
+    clientSecret: keys.googleClientSecret,
+    callbackURL: '/auth/google/callback'
+  })
+);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);

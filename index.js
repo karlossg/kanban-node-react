@@ -10,6 +10,15 @@ passport.use(
     clientID: keys.googleClientID,
     clientSecret: keys.googleClientSecret,
     callbackURL: '/auth/google/callback'
+  }, (accesToken) => {
+    console.log(accesToken);
+  })
+);
+
+app.get(
+  '/auth/google',
+  passport.authenticate('google', {
+    scope: ['profile', 'email']
   })
 );
 

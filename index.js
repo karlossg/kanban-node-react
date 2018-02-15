@@ -1,4 +1,6 @@
 const express = require('express');
+const authRoutes = require('./routes/authRoutes');
+require('./services/passport');
 
 const app = express();
 

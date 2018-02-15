@@ -13,3 +13,8 @@ passport.use(
     console.log('profile:', profile);
   })
 );
+
+// module.exports = {
+//   googleClientID: '',
+//   googleClientSecret: ''
+// }

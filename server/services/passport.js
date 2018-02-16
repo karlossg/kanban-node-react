@@ -10,9 +10,21 @@ passport.use(
     clientID: keys.googleClientID,
     clientSecret: keys.googleClientSecret,
     callbackURL: '/auth/google/callback'
-  }, (accessToken, refreshToken, profile, done) => {
-    new User({ googleId: profile.id }).save();
-  })
+  },
+    (accessToken, refreshToken, profile, done) => {
+      User.findOne({ googleId: profile.id })
+        .then(foundUser => {
+          if (foundUser) {
+            // user exist
+            done(null, foundUser);
+          } else {
+            // no user, create new
+            new User({ googleId: profile.id })
+              .save()
+              .then(user => done(null, user))
+          }
+        })
+    })
 );
 
 // /config/keys.js:

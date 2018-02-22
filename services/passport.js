@@ -40,9 +40,3 @@ passport.use(
   )
 );
 
-// /config/keys.js:
-// module.exports = {
-//   googleClientID: '',
-//   googleClientSecret: '',
-//   mongoURI: ''
-// }

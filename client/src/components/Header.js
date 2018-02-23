@@ -8,7 +8,7 @@ class Header extends Component {
   render() {
     return (
       <nav>
-        <div className="nav-wrapper  light-blue lighten-2">
+        <div className="nav-wrapper  light-blue lighten-1">
           <a className="left brand-logo" style={styleLogo}>KanbanIT</a>
           <ul className="right">
             <li>

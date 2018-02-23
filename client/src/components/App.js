@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
-import connect from 'react-redux';
+import { connect } from 'react-redux';
 import * as actions from '../actions';
 
 import Header from './Header'
@@ -29,6 +29,6 @@ class App extends Component {
   }
 }
 
-const test = connect(null, actions)(App)
 
-export { test };
+
+export default connect(null, actions)(App);

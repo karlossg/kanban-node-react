@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
 
+const style = {
+  marginLeft: '10px'
+}
+
 class Header extends Component {
   render() {
     return (
       <nav>
-        <div class="nav-wrapper  light-blue lighten-3">
-          <a class="left brand-logo">KanbanIT</a>
-          <ul class="right">
+        <div className="nav-wrapper  light-blue lighten-3">
+          <a className="left brand-logo" style={style}>KanbanIT</a>
+          <ul className="right">
             <li>
-              <a class="waves-effect waves-light btn">Login with Google</a>
+              <a className="waves-effect waves-light btn">Login with Google</a>
             </li>
           </ul>
         </div>
-      </nav>
+      </nav >
     )
   }
 }

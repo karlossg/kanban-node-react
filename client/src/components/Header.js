@@ -7,34 +7,33 @@ const styleLogo = {
 
 class Header extends Component {
   renderOptions() {
-    switch (this.props.authReducer) {
+    switch (this.props.auth) {
       case null:
         return;
       case false:
-        return <a className="waves-effect light-blue btn">Login</a>
+        return <li><a href="/google/auth" className="waves-effect light-blue btn">Login</a></li>
       default:
-        return <a className="waves-effect light-blue btn">Logout</a>
+        return <li><a href="/api/logout" className="waves-effect light-blue btn">Logout</a></li>
     }
   }
 
   render() {
+    console.log(this.props)
     return (
       <nav>
         <div className="nav-wrapper light-blue lighten-1">
           <a className="left brand-logo" style={styleLogo}>KanbanIT</a>
           <ul className="right">
-            <li>
-              {this.renderOptions()}
-            </li>
+            {this.renderOptions()}
           </ul>
         </div>
-      </nav >
+      </nav>
     )
   }
 }
 
-function mapStateToProps({ authReducer }) {
-  return { authReducer };
+function mapStateToProps({ auth }) {
+  return { auth };
 }
 
 export default connect(mapStateToProps)(Header);

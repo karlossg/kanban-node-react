@@ -1,0 +1,1 @@
+export conts FETCH_USER = 'FETCH_USER';

@@ -9,7 +9,7 @@ const KanbanNew = () => <h2> KanbanNew </h2>
 
 const App = () => {
   return (
-    <div>
+    <div className="container">
       <BrowserRouter>
         <div>
           <Header />

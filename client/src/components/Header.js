@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 const styleLogo = {
@@ -33,9 +34,13 @@ class Header extends Component {
     return (
       <nav>
         <div className="nav-wrapper light-blue lighten-1">
-          <a className="left brand-logo" style={styleLogo}>
+          <Link
+            to={this.props.auth ? '/boards' : '/'}
+            className="left brand-logo"
+            style={styleLogo}
+          >
             KanbanIT
-          </a>
+          </Link>
           <ul className="right">{this.renderOptions()}</ul>
         </div>
       </nav>

@@ -6,4 +6,4 @@ const noteSchema = new Schema({
   id: { type: 'String', required: true, unique: true }
 });
 
-export default mongoose.model('Note', noteSchema);
+mongoose.model('Note', noteSchema);

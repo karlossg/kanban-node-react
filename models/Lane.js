@@ -8,4 +8,4 @@ const laneSchema = new Schema({
   _user: { type: Schema.Types.ObjectId, ref: 'User' }
 });
 
-export default mongoose.model('Lane', laneSchema);
+mongoose.model('Lane', laneSchema);

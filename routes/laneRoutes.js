@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const uuid = require('uuid-v4');
 const requireLogin = require('../middlewares/requireLogin');
 
 const Lane = mongoose.model('lane');

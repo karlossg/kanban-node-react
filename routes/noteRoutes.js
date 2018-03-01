@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const uuid = require('uuid-v4');
+
 const requireLogin = require('../middlewares/requireLogin');
 
 const Note = mongoose.model('note');
@@ -40,8 +42,8 @@ module.exports = app => {
     });
   });
 
-  app.delete('/api/lanes/:laneId', requireLogin, (req, res) => {
-    Lane.findOne({ id: req.params.laneId }).exec((err, lane) => {
+  app.delete('/api/notes/:noteId', requireLogin, (req, res) => {
+    Note.findOne({ id: req.params.noteId }).exec((err, note) => {
       if (err) {
         res.status(500).send(err);
       }

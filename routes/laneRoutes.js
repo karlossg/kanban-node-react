@@ -30,4 +30,16 @@ module.exports = app => {
       res.json(saved);
     });
   });
+
+  app.delete('/api/lanes/:laneId', requireLogin, (req, res) => {
+    Lane.findOne({ id: req.params.laneId }).exec((err, lane) => {
+      if (err) {
+        res.status(500).send(err);
+      }
+
+      lane.remove(() => {
+        res.status(200).end();
+      });
+    });
+  });
 };

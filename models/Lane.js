@@ -8,4 +8,12 @@ const laneSchema = new Schema({
   _user: { type: Schema.Types.ObjectId, ref: 'User' }
 });
 
+function populateNotes(next) {
+  this.populate('notes');
+  next();
+}
+
+laneSchema.pre('find', populateNotes);
+laneSchema.pre('findOne', populateNotes);
+
 mongoose.model('lane', laneSchema);

@@ -29,8 +29,21 @@ export default function lanes(state = initialState, action) {
         }
         return lane;
       });
+    case DELETE_NOTE:
+      return state.map(lane => {
+        if (lane.id === action.laneId) {
+          const notes = [
+            ...lane.notes.filter(note => note.id !== action.note.id)
+          ];
+          return { ...lane, notes };
+        }
+        return lane;
+      });
 
     default:
       return state;
   }
 }
+
+// case DELETE_NOTE:
+//       return state.filter(note => note.id !== action.noteId);

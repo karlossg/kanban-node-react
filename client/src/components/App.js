@@ -5,9 +5,9 @@ import * as actions from '../actions';
 
 import Header from './Header';
 import Landing from './Landing';
+import Kanban from '../containers/Kanban';
 
 const Dashboard = () => <h2> Dashboard </h2>;
-const KanbanNew = () => <h2> KanbanNew </h2>;
 
 class App extends Component {
   componentDidMount() {
@@ -21,7 +21,7 @@ class App extends Component {
             <Header />
             <Route exact path="/" component={Landing} />
             <Route exact path="/boards" component={Dashboard} />
-            <Route path="/boards/new" component={KanbanNew} />
+            <Route path="/boards/new" component={Kanban} />
           </div>
         </BrowserRouter>
       </div>

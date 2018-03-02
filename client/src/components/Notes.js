@@ -4,7 +4,8 @@ import styles from './Notes.css';
 
 const Notes = ({ notes }) => {
   return (
-    <ul className="notes">
+    <ul className={styles.notes
+      >
       {notes.map(note => (
         <Note id={note.id} key={note.id}>
           {note.task}

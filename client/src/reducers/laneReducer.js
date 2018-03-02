@@ -1,19 +1,34 @@
-import { CREATE_LANE, UPDATE_LANE, DELETE_LANE } from '../actions/types';
+import {
+  CREATE_LANE,
+  UPDATE_LANE,
+  DELETE_LANE,
+  CREATE_NOTE,
+  DELETE_NOTE
+} from '../actions/types';
 
 const initialState = [];
 
-export default function notes(state = initialState, action) {
+export default function lanes(state = initialState, action) {
   switch (action.type) {
-    case CREATE_NOTE:
-      return [...state, action.note];
+    case CREATE_LANE:
+      return [...state, action.lane];
 
-    case UPDATE_NOTE:
-      return state.map(note => {
-        return note.id === action.id ? { ...note, ...action.note } : note;
+    case UPDATE_LANE:
+      return state.map(lane => {
+        return lane.id === action.id ? { ...lane, ...action.lane } : lane;
       });
 
-    case DELETE_NOTE:
-      return state.filter(note => note.id !== action.noteId);
+    case DELETE_LANE:
+      return state.filter(lane => lane.id !== action.laneId);
+
+    case CREATE_NOTE:
+      return state.map(lane => {
+        if (lane.id === action.laneId) {
+          const notes = [...lane.notes, action.note.id];
+          return { ...lane, notes };
+        }
+        return lane;
+      });
 
     default:
       return state;

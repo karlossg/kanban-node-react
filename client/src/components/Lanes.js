@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import Lane from '../containers/LaneContainer.js';
 
 const Lanes = ({ lanes }) => {
@@ -9,8 +9,8 @@ const Lanes = ({ lanes }) => {
   );
 };
 
-Lanes.propTypes = {
-  lanes: PropTypes.array
-};
+// Lanes.propTypes = {
+//   lanes: PropTypes.array
+// };
 
 export default Lanes;

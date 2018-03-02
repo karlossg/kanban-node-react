@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Lanes from '../components/Lanes';
 import { createLane } from '../actions';
-import styles from '../Lane/Lane.css';
+import styles from '../components/Lane.css';
 
 const Kanban = props => (
   <div>
@@ -23,7 +23,7 @@ const Kanban = props => (
 
 Kanban.need = [
   () => {
-    return fetchLanes();
+    // return fetchLanes();
   }
 ];
 

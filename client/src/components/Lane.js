@@ -1,5 +1,5 @@
-import React, { PropTypes } from 'react';
-import NotesContainer from '../Note/NotesContainer';
+import React from 'react';
+import NotesContainer from '../containers/NotesContainer';
 
 import styles from './Lane.css';
 
@@ -25,12 +25,12 @@ const Lane = props => {
   );
 };
 
-Lane.propTypes = {
-  lane: PropTypes.object,
-  laneNotes: PropTypes.array,
-  addNote: PropTypes.func,
-  updateLane: PropTypes.func,
-  deleteLane: PropTypes.func
-};
+// Lane.propTypes = {
+//   lane: PropTypes.object,
+//   laneNotes: PropTypes.array,
+//   addNote: PropTypes.func,
+//   updateLane: PropTypes.func,
+//   deleteLane: PropTypes.func
+// };
 
 export default Lane;

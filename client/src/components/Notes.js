@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import Note from './Note';
 import styles from './Notes.css';
 
@@ -14,8 +14,8 @@ const Notes = ({ notes }) => {
   );
 };
 
-Notes.propTypes = {
-  notes: PropTypes.array
-};
+// Notes.propTypes = {
+//   notes: PropTypes.array
+// };
 
 export default Notes;

@@ -44,6 +44,3 @@ export default function lanes(state = initialState, action) {
       return state;
   }
 }
-
-// case DELETE_NOTE:
-//       return state.filter(note => note.id !== action.noteId);
